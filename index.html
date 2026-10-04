@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hearts"></div>
+<audio id="bgMusic" src="music.mp3"></audio>
+
+<div class="pages">
+
+    <!-- PAGE 1 -->
+    <section class="page active">
+        <img src="images/cat1.gif" class="sticker">
+        <h1 class="gold">Hey, My Princess...✨</h1>
+        <p>This is a small Birthday Gift for You Bachaaa ❤️</p>
+        <button onclick="nextPage()">Start</button>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page">
+    <img src="images/cat2.gif" class="sticker">
+
+    <h1>Setting the Mood 🎶</h1>
+    <p>A song that reminds me of your smile ❤️</p>
+
+    <button id="musicBtn" onclick="playMusic()">Play Music</button>
+
+    <!-- FULL SCREEN OVERLAY -->
+    <div id="musicOverlay" class="music-overlay">
+        <div class="overlay-content">
+            <img src="images/crazycat.gif" class="music-gif">
+            <h2 class="music-text">
+                Close your eyes… Feel the music… Let it hug your heart 🎧💖
+            </h2>
+            <button onclick="nextPage()">Continue</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page">
+        <img src="images/cat3.gif" class="sticker">
+        <h1 id="typeTitle"></h1>
+        <p id="line1"></p>
+        <p id="line2"></p>
+        <p id="line3"></p>
+        <p id="line4"></p>
+        <p id="line5"></p>
+        <p id="line6"></p>
+        <p id="line7"></p>
+        <button id="page3NextBtn" onclick="nextPage()">Next</button>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page">
+        <h1>Some of your Moments 📸</h1>
+        <div class="gallery">
+            <img src="images/img1.jpg">
+            <img src="images/img2.jpg">
+            <img src="images/img3.jpg">
+            <img src="images/img4.jpg">
+            <img src="images/img5.jpg">
+            <img src="images/img6.jpg">
+            <img src="images/img7.jpg">
+            <img src="images/img8.jpg">
+        </div>
+        <button onclick="nextPage()">Keep Going</button>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page">
+        <img src="images/cat4.gif" class="sticker big">
+        <h1>A Small Gift</h1>
+        
+        <h2 id="countdownText" style="color: #ff4d6d; font-family: 'Quicksand', sans-serif;">Wait for it... ⏳</h2>
+        <div id="countdown">
+            <span id="days">00</span>d
+            <span id="hours">00</span>h
+            <span id="minutes">00</span>m
+            <span id="seconds">00</span>s
+        </div>
+
+        <div class="gift" id="giftBox" style="display: none;" onclick="openGift()">🎁</div>
+        <div class="fireworks-container"></div>
+    </section>
+
+    <!-- PAGE 6 -->
+    <section class="page">
+        <img src="images/cake.gif" class="cake">
+        <h1 class="birthday-text">Happy Birthday Pinkuuu 🎂</h1>
+        <p>            May this year bring you endless happiness,</p>
+        <p>      Success, love (me🤭), good health and everything you dream for❤️</p>
+        <p>               May this is as special as you are for me🫶</p>
+        <p>Aurr bhagwan jii tere dimag to toda thanda kre aurr tuj prr aapni kripa bnaye rakhe🙌</p>
+        <div class="fireworks-container"></div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

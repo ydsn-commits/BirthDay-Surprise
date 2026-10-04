@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    height:100dvh;
+    width:100vw;
+}
+
+h1{
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(40px, 8vw, 80px);
+    color: #fda6bc;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: clamp(16px, 4vw, 22px);
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+button{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.pages{
+position:relative;
+width:100%;
+height:100vh;
+}
+
+.page{
+    position:absolute;
+    width:100vw;
+    height:100dvh;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    transform:translateY(100%);
+    transition:0.8s ease;
+}
+
+.page.active{
+opacity:1;
+transform:translateY(0);
+}
+
+button{
+padding:10px 25px;
+border:none;
+border-radius:25px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#ff1e4d;
+transform:scale(1.1);
+}
+
+.sticker{
+width:200px;
+margin-bottom:20px;
+animation:float 3s ease-in-out infinite;
+}
+
+.big{width:250px;}
+.cake{width:250px;}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #ff4d6d;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
+    transition: 0.3s;
+}
+
+.gallery img:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 77, 109, 1);
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.hearts span{
+position:absolute;
+color:rgb(238, 105, 105);
+animation:heartFloat 10s linear infinite;
+}
+
+@keyframes heartFloat{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+
+.gift{
+font-size:60px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gift:hover{
+transform:scale(1.2);
+}
+
+.birthday-text{
+font-size:50px;
+color:gold;
+text-shadow:0 0 20px gold;
+}
+
+.fireworks-container{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+animation:burst 1.5s ease-out forwards;
+}
+
+@keyframes burst{
+0%{transform:translate(0,0);opacity:1;}
+100%{transform:translate(var(--x),var(--y));opacity:0;}
+}
+
+.flash{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+opacity:0;
+pointer-events:none;
+}
+
+/* MUSIC OVERLAY */
+
+.music-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:0.5s ease;
+}
+
+.music-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.overlay-content{
+    text-align:center;
+    animation: popUp 0.8s ease;
+}
+
+.music-gif{
+    width:220px;
+    margin-bottom:20px;
+}
+
+.music-text{
+    font-family: 'Great Vibes', cursive;
+    font-size:40px;
+    color:#facdd9;
+    text-shadow:0 0 20px hotpink;
+    margin-bottom:20px;
+    animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes popUp{
+    0%{transform: scale(0); opacity:0;}
+    100%{transform: scale(1); opacity:1;}
+}
+
+@keyframes glowPulse{
+    from{ text-shadow: 0 0 10px rgb(41, 242, 252); }
+    to{ text-shadow: 0 0 25px rgb(248, 55, 161); }
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+#page3NextBtn{
+    opacity:0;
+    pointer-events:none;
+    transition: opacity 0.6s ease;
+}
+
+/* COUNTDOWN TIMER STYLES */
+#countdown {
+    font-size: clamp(24px, 6vw, 40px);
+    font-weight: 600;
+    color: #ff4d6d;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+    letter-spacing: 2px;
+}
+
+#countdown span {
+    font-weight: bold;
+    color: #ff1e4d;
+}
